@@ -22,6 +22,32 @@ Additionally, fluentd will push logs to S3 buckets for long-term archival storag
 
 ![architecture](doc/architecture.png)
 
+### Query API
+
+Initially, Metronome will provide a direct API for retrieving usage analytics for an item. Developers can query this using
+
+`GET /tock/:id.json`
+
+```json
+{
+	views: {
+		"2015-01-22": 9200,
+		"2015-01-21": 8800,
+		"2015-01-20": 4400,
+		"2015-01-19": 200,
+		"2015-01-18": 1200								
+	}
+	downloads: {
+		"kml": 4500,
+		"csv": 120000,
+		"shp": "450"
+	}
+	referers: {
+		"arcgis.com": 4200,
+		"washingtonpost.com/articles/dc-news": 230000
+	}
+}
+```
 
 ## Roadmap
 
